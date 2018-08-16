@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<script>
+	$.when($.ajax("returnFile.php"),$.ajax("returnFile.php")).then(function(d,s,xhr){
+			console.log(d,s,xhr.statusCode);
+	}).done(function(){alert("all done");}).fail(function(){alert("failed");});
+	</script>
+</body>
+</html>

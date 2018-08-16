@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		ul{
+			list-style: none;
+			padding:10px 25px;
+		}
+		ul li{
+			display: block;
+			background:#f5f5f5;
+			color:#333;
+			margin-top:15px;
+			padding:10px;
+		}
+		.ul-container{
+			padding:50px;
+		}
+		.second-ul-container{
+			padding:25px;
+		}
+	</style>
+</head>
+<body>
+
+	<ul class="first">
+		<li>a</li>
+		<li>b</li>
+		<li >c</li>
+		<li>d</li>
+		<li>e</li>
+		<li>f</li>
+	</ul>
+	<div class="ul-container">
+		<div class="second-ul-container">
+			<ul class="second">
+				<li>a</li>
+				<li>b</li>
+				<li class="pinku">c</li>
+				<label>Label after pinku</label>
+				<li>d</li>
+				<li>e</li>
+				<li>f</li>
+			</ul>
+		</div>
+	</div>
+	
+	<script>
+		$("li.pinku").closest("ul").css("background","pink");
+	</script>
+  
+
+</body>
+</html>

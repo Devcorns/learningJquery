@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <a onClick="sendData()">abcd</a>
+
+    <script>
+        function sendData() {
+            $.ajax({
+                url: "catchdata.php",
+                type: "POST",
+
+                data: {
+                    'name': 'prakhar',
+                    'password': "abcd"
+                },
+
+                success: function(result) {
+                    // console.log(result);
+                    result = JSON.parse(result);
+                    console.log(result)
+                        // console.log(result);
+                    $.each(result, function(i, k) {
+                        console.log(k.name);
+
+                    });
+                },
+                error: function() {
+                    console.error("Error occured");
+                },
+                complete: function() {
+
+                    console.log("Task is now completed");
+                },
+                beforeSend: function() {
+                    console.log("Ready to send");
+                },
+                async: false,
+
+
+
+
+
+
+            });
+
+        }
+    </script>
+    <script>
+    </script>
+
+
+</body>
+
+</html>

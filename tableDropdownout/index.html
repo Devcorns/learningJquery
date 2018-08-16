@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="table-responsive">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Email</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>john@example.com</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td><div class="dropdown">
+                <a class="dropdown-toggle" type="button" data-toggle="dropdown">...</a>
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                </ul>
+              </div></td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>john@example.com</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td><div class="dropdown">
+                <a class="dropdown-toggle" type="button" data-toggle="dropdown">...</a>
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                </ul>
+              </div></td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>john@example.com</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td><div class="dropdown">
+                <a class="dropdown-toggle" type="button" data-toggle="dropdown">...</a>
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                </ul>
+              </div></td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>john@example.com</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td><div class="dropdown">
+                <a class="dropdown-toggle" type="button" data-toggle="dropdown">...</a>
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">HTML</a></li>
+                  <li><a href="#">CSS</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                </ul>
+              </div></td>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>john@example.com</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>
+            <a class="drop-down">Dropdown</a>
+            
+            
+            <ul class="hide" id="ul-outer">
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+         </td>
+      </tr>
+
+     
+
+      
+      
+    </tbody>
+  </table>
+</div>
+
+<script>
+  $(document).on("click",'.backdrop-menu',function(){
+      $(".backdrop-menu").remove();
+      
+
+  })
+
+    $(document).on("click",".drop-down",function(e){
+
+      $("body").append("<div class='backdrop-menu'></div>");
+
+      $("body").append($(this).parent().find(".hide").clone().addClass('opened').removeClass("hide"));
+      console.log()
+     
+       $("#ul-outer").css({
+         left:$(this).offset().left-$(this).width(),
+         top:$(this).offset().top+$(this).outerHeight()
+       })
+        
+    })
+
+    </script>
+    <style>
+      #ul-outer{
+        position:absolute;
+        min-width:120px;
+        background:#fff;
+        list-style: none;
+        padding:0;
+        border:1px solid #ddd;
+        z-index: 100;
+        
+        
+      }
+      #ul-outer li{
+        display: block;
+        border-bottom:1px solid #ddd;
+        padding:10px 15px;
+      }
+      .backdrop-menu{
+        position:fixed;
+        height:100%;
+        width:100%;
+        top:0;
+        bottom:0;
+        z-index: 99;
+      }
+    </style>
+
+</body>
+</html>

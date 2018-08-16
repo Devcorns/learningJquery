@@ -1,0 +1,39 @@
+<style>
+
+	#kbc{
+		
+		border:1px solid black;
+		height: 200px;
+		width:200px;
+		position: absolute;
+		top:100px;
+	}
+
+</style>
+
+
+
+<button class="btn-animate">Animate</button>
+<div id="kbc" ></div>
+
+
+
+<script src="http://www.google.com/jsapi"></script>
+<script>
+google.load("jquery", "1.4.2");
+	</script>
+<script>
+$(".btn-animate").click(function(){
+	
+$("#kbc").animate({
+	
+	left:"50%",
+	height: 'toggle'
+	
+	
+	
+	
+},3000);
+	});
+
+</script>

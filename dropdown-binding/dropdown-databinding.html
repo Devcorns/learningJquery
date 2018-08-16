@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>My First Bootstrap Page</h1>
+        <p>Resize this responsive page to see the effect!</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <select id="first-select"></select>
+                <select id="second-select"></select>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        var originalData = [{
+            "id": 1,
+            "name": "india",
+            "state": [{
+                "id": 1,
+                "name": "uttarpradesh",
+                "city": [{
+                    "id": 1,
+                    "name": "mathura"
+                }, {
+                    "id": 2,
+                    "name": "Agra"
+                }, {
+                    "id": 3,
+                    "name": "Goverdhan"
+                }]
+            }, {
+                "id": 2,
+                "name": "Mumbai",
+                "city": [{
+                    "id": 1,
+                    "name": "Dharavi"
+                }, {
+                    "id": 2,
+                    "name": "Bandra"
+                }, {
+                    "id": 3,
+                    "name": "Shivaji"
+                }]
+
+            }, {
+                "id": 3,
+                "name": "Gugrat"
+            }]
+        }, {
+            "id": 2,
+            "name": "pakastan"
+        }];
+
+
+
+
+
+        $.each(countries, function(i, key) {
+            $("#first-select").append("<option>" + key.name + "</option>");
+        })
+
+        $("#first-select").on("change", function() {
+            var valu = $(this).val();
+            $.each(countries, function(i, key) {
+                if (key.name == valu) {
+                    $("#second-select").html("");
+                    $.each(key.state, function(i, key2) {
+                        //console.log(key2.name);
+
+                        $("#second-select").append("<option>" + key2.name + "</option>");
+                    });
+                } else {
+                    $("#second-select").html("<option>Select city</option>");
+                }
+            });
+
+
+        })
+    </script>
+
+
+</body>
+
+</html>

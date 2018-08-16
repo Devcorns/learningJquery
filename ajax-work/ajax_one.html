@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div class="trigger">trigger</div>
+<div class="result"></div>
+<div class="log"></div>
+
+<script>
+
+$( ".trigger" ).click(function() {
+  $( ".result" ).load( "../ajax-test/test.html" );
+});
+$( document ).ajaxComplete(function( event, xhr, settings ) {
+  if ( settings.url === "../ajax-test/test.html" ) {
+    $( ".log" ).text( "Triggered ajaxComplete handler. The result is " +
+      xhr.responseText );
+	  console.log(event);//it tells which type of event is this
+	  console.log(xhr);//response text
+	  console.log(settings);//url information
+	  settings.url;
+	  
+	  
+	  
+  }
+});
+
+</script>
+</body>
+</html>
